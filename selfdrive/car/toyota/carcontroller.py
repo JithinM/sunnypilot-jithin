@@ -127,9 +127,9 @@ class CarController:
     if not (CC.enabled and CS.out.cruiseState.enabled) and CS.pcm_acc_status:
       pcm_cancel_cmd = 1
 
-    # on entering standstill, send standstill request
-    if CS.out.standstill and not self.last_standstill and (self.CP.carFingerprint not in NO_STOP_TIMER_CAR or self.CP.enableGasInterceptor):
-      self.standstill_req = True
+    # on entering standstill, send standstill request - jithin commented out
+    # if CS.out.standstill and not self.last_standstill and (self.CP.carFingerprint not in NO_STOP_TIMER_CAR or self.CP.enableGasInterceptor):
+    #   self.standstill_req = True
     if CS.pcm_acc_status != 8:
       # pcm entered standstill or it's disabled
       self.standstill_req = False
